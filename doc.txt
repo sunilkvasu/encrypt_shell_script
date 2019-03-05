@@ -1,0 +1,25 @@
+Simply Learn to encrypt your bash shell script on Linux using SHC
+=================================================================
+1. Download shc and install it
+	wget http://www.datsi.fi.upm.es/~frosal/sources/shc-3.8.7.tgz
+	tar xvfz shc-3.8.7.tgz
+	cd shc-3.8.7
+	make
+	./shc -v
+
+2. Create a Sample Shell Script
+	#!/bin/bash
+	echo "Enter a number: "
+	read number
+	i=1
+	while [ $number -ge $i ]; do 
+		echo "Loop $i"
+		i=$((i+1))
+	done
+
+3. Encrypt the Shell Script Using shc
+	./shc -f random.sh
+	ls -l random.sh*
+
+4. Execute the Encrypted Shell Script
+	./random.sh.x
